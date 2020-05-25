@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <h1 class="govuk-heading-xl">
+        Who is the responsible entity?
+        </h1>
+
+        <form class="form" action="address-search" method="post">
+
+      <div class="govuk-form-group">
+      <label class="govuk-label" for="full-name">
+        Full name
+      </label>
+      <input class="govuk-input" id="full-name" name="responsibleEntity[full-name]" type="text">
+    </div>
+
+    <div class="govuk-form-group">
+    <label class="govuk-label" for="org-name">
+      Organisation name
+    </label>
+    <input class="govuk-input" id="org-name" name="responsibleEntity[org-name]" type="text">
+  </div>
+
+  <div class="govuk-form-group">
+  <label class="govuk-label" for="email-address">
+    Organisation name
+  </label>
+  <input class="govuk-input" id="email-address" name="responsibleEntity[email-address]" type="text">
+</div>
+
+
+  <div class="govuk-form-group">
+  <label class="govuk-label" for="tel-number">
+    Telephone number
+  </label>
+  <input class="govuk-input" id="tel-number" name="responsibleEntity[tel-number]" type="text">
+</div>
+
+
+  <button class="govuk-button" data-module="govuk-button">
+    Save and continue
+  </button>
+  </form>
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <h1 class="govuk-heading-xl">
+        What is your address?
+        </h1>
+
+        <h2 class="govuk-heading-m">
+        Postcode
+          </h2>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="width-10">
+          </label>
+          <input class="govuk-input govuk-input--width-10" id="width-10" name="width-10" type="text">
+        </div>
+
+<form class="form" action="address-results" method="post">
+  <button class="govuk-button" data-module="govuk-button">
+    Find address
+  </button>
+  </form>
+
+<a href="#" class="govuk-link">I live outside the UK</a>
+
+    </div>
+</div>
+
+{% endblock %}

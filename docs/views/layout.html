@@ -28,6 +28,8 @@
 
 {% block head %}
   {% include "includes/head.html" %}
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
 {% endblock %}
 
 {% block header %}
@@ -60,6 +62,7 @@
       }
     ]
   }) }}
+  {% include "includes/phase-banner.html" %}
 {% endblock %}
 
 {% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}

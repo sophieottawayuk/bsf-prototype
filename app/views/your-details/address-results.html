@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <h1 class="govuk-heading-xl">
+        What is your address?
+        </h1>
+
+
+
+        <h2 class="govuk-heading-m">
+        Postcode
+          </h2>
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-quarter">
+              <h3 class="govuk-heading-s">
+
+                SW1 1AA </h3>
+            </div>
+            <div class="govuk-grid-column-one-quarter">
+            <a href="address-search" class="govuk-link">Change</a>
+            </div>
+            </div>
+
+
+            <h2 class="govuk-heading-m">
+            Select an address
+              </h2>
+
+            <div class="govuk-form-group">
+          <select class="govuk-select" id="sort" name="sort">
+            <option value="buckingham-palace">Buckingham Palace, LONDON SW1 1AA</option>
+          </select>
+</div>
+
+
+<form class="form" action="check-answers" method="post">
+  <button class="govuk-button" data-module="govuk-button">
+    Continue
+  </button>
+  </form>
+
+<a href="#" class="govuk-link">I live outside the UK</a>
+
+    </div>
+</div>
+
+{% endblock %}

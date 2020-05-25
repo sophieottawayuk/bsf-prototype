@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <h1 class="govuk-heading-xl">
+        Your details
+        </h1>
+
+        <form class="form" action="address-search" method="post">
+
+        <div class="govuk-form-group">
+        <label class="govuk-label" for="mhclg-reg">
+          MHCLG registration number
+        </label>
+        <span id="mhclg-reg-hint" class="govuk-hint">
+            Insert hint text
+          </span>
+        <input class="govuk-input" id="mhclg-reg" name="applicant[mhclg-reg]" type="text">
+      </div>
+
+      <div class="govuk-form-group">
+      <label class="govuk-label" for="full-name">
+        Full name
+      </label>
+      <input class="govuk-input" id="full-name" name="applicant[full-name]" type="text">
+    </div>
+
+    <div class="govuk-form-group">
+    <label class="govuk-label" for="org-name">
+      Organisation name
+    </label>
+    <input class="govuk-input" id="org-name" name="applicant[org-name]" type="text">
+  </div>
+
+  <div class="govuk-form-group">
+  <label class="govuk-label" for="email-address">
+    Email address
+  </label>
+  <input class="govuk-input" id="email-address" name="applicant[email-address]" type="text">
+</div>
+
+
+  <div class="govuk-form-group">
+  <label class="govuk-label" for="tel-number">
+    Telephone number
+  </label>
+  <input class="govuk-input" id="tel-number" name="applicant[tel-number]" type="text">
+</div>
+
+
+  <button class="govuk-button" data-module="govuk-button">
+    Save and continue
+  </button>
+  </form>
+
+    </div>
+</div>
+
+{% endblock %}
