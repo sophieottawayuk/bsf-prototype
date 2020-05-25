@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+   <div class="govuk-grid-column-two-thirds">
+     <form action="/role-handler" method="post" novalidate>
+
+       <div class="govuk-form-group">
+         <fieldset class="govuk-fieldset">
+           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+             <h1 class="govuk-fieldset__heading">
+               What position does the responsible entity hold in relation to the property?
+             </h1>
+           </legend>
+           <div class="govuk-radios">
+             <div class="govuk-radios__item">
+               <input class="govuk-radios__input" id="where-do-you-live" name="representative[role]" type="radio" value="Freeholder">
+               <label class="govuk-label govuk-radios__label" for="freeholder">
+                 Freeholder
+               </label>
+             </div>
+             <div class="govuk-radios__item">
+               <input class="govuk-radios__input" id="head-leaseholder" name="representative[role]" type="radio" value="Head Leaseholder">
+               <label class="govuk-label govuk-radios__label" for="head-leaseholder">
+                 Head Leaseholder
+               </label>
+             </div>
+             <div class="govuk-radios__item">
+               <input class="govuk-radios__input" id="management-company" name="representative[role]" type="radio" value="Management Company">
+               <label class="govuk-label govuk-radios__label" for="management-company">
+                 Management Company
+               </label>
+             </div>
+           </div>
+         </fieldset>
+       </div>
+
+       <button class="govuk-button" data-module="govuk-button">
+         Continue
+       </button>
+     </form>
+   </div>
+ </div>
+
+
+
+{% endblock %}

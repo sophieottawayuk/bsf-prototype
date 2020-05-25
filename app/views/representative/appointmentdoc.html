@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <h1 class="govuk-heading-xl">
+        Upload the representative’s appointment document
+        </h1>
+        <form class="form" action="check-answers" method="post">
+
+          <p class="govuk-body">Upload the representative’s appointment document confirming their capacity to act on behalf of the applicant.</p>
+          <br/>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="file-upload-1">
+              Upload a file
+            </label>
+            <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
+          </div>
+
+  <button class="govuk-button" data-module="govuk-button">
+    Save and continue
+  </button>
+  </form>
+
+    </div>
+</div>
+
+{% endblock %}

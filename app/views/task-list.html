@@ -42,11 +42,11 @@
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="#" aria-describedby="contact-details-completed">
+                <a href="/representative/representative-routing" aria-describedby="contact-details-completed">
                   Your representative
                 </a>
               </span>
-              <!--<strong class="govuk-tag app-task-list__task-completed" id="contact-details-completed">Completed</strong>}-->
+              {% if representativeSectionComplete %}<strong class="govuk-tag app-task-list__task-completed" id="contact-details-completed">Completed</strong>{% endif %}
             </li>
           </ul>
         </li>
