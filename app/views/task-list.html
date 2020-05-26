@@ -57,10 +57,12 @@
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="#">
+                <a href="/buildingowner/building-owner-routing">
                   Building owner
                 </a>
               </span>
+              {% if buildingOwnerSectionComplete %}<strong class="govuk-tag app-task-list__task-completed" id="building-owner-completed">Completed</strong>{% endif %}
+
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">

@@ -3,15 +3,18 @@ const router = express.Router()
 
 var responsibleEntity;
 var representative;
+var buildingOwner;
 var yourDetailsSectionComplete;
 var responsibleEntitySectionComplete;
 var representativeSectionComplete;
+var buildingOwnerSectionComplete;
 
 /* Set all sections to incomplete on load*/
 router.get('/', function (req, res) {
   yourDetailsSectionComplete = false;
   responsibleEntitySectionComplete = false;
   representativeSectionComplete = false;
+  buildingOwnerSectionComplete = false;
   res.render('index');
 })
 
@@ -34,10 +37,14 @@ router.post('/representative-submit', function (req,res) {
 res.redirect('task-list');
 });
 
+router.post('/building-owner-submit', function (req,res) {
+  buildingOwnerSectionComplete = true;
+res.redirect('task-list');
+});
+
 
 router.post('/responsible-entity-handler', function (req, res) {
   responsibleEntity = req.session.data['applicant']['responsible-entity'];
-  console.log(responsibleEntity);
   if (responsibleEntity === 'no') {
     responsibleEntity = true;
     res.redirect('/responsible-entity/name')
@@ -88,10 +95,30 @@ router.get('/representative/check-answers', function (req, res) {
   res.render('representative/check-answers', { representative })
 })
 
+router.get('/buildingowner/check-answers', function (req, res) {
+  res.render('buildingowner/check-answers', { buildingOwner })
+})
+
+
+router.post('/building-owner-handler', function (req, res) {
+  buildingOwner = req.session.data['applicant']['buildingowner'];
+  if (buildingOwner === 'yes') {
+    buildingOwner = false;
+      req.session.data['applicant']['buildingowner'] = "Yes";
+      console.log(buildingOwner);
+    res.redirect('/buildingowner/check-answers')
+  } else {
+    buildingOwner = true;
+    req.session.data['applicant']['buildingowner'] = "No";
+    console.log(buildingOwner);
+      res.redirect('/buildingowner/name')
+  }
+})
+
 
 
 router.get('/task-list', function (req, res) {
-  res.render('task-list', { responsibleEntity, responsibleEntitySectionComplete, yourDetailsSectionComplete, representativeSectionComplete })
+  res.render('task-list', { responsibleEntity, responsibleEntitySectionComplete, yourDetailsSectionComplete, representativeSectionComplete, buildingOwnerSectionComplete })
 })
 
 
@@ -120,6 +147,15 @@ if (representativeSectionComplete == true) {
 }
 else {
   res.render('representative/index');
+}
+})
+
+router.get('/buildingowner/building-owner-routing', function (req, res) {
+if (buildingOwnerSectionComplete == true) {
+  res.render('buildingowner/check-answers', {buildingOwner});
+}
+else {
+  res.render('buildingowner/index');
 }
 })
 
